@@ -1,0 +1,48 @@
+
+
+select
+    tensile_no as test_id,
+    'tensile' as test_category,
+    curing_no,
+    project_no,
+    test_plan_no,
+    aging_flag,
+    aging_medium,
+    aging_equipment,
+    aging_temperature,
+    aging_time,
+    dryout_flag,
+    test_piece_type,
+    measuring_temperature_for_tensile,
+    equipment_for_thickness,
+    equipment_for_tensile,
+    censor_type,
+    tensile_speed,
+    tensile_thickness_median,
+    tensile_thickness_std,
+    m20_median,
+    m50_median,
+    m100_median,
+    m200_median,
+    m300_median,
+    tensile_median,
+    tensile_std,
+    elongation_median,
+    elongation_std,
+    m20_change,
+    m50_change,
+    m100_change,
+    m200_change,
+    m300_change,
+    tensile_change,
+    elongation_change,
+    sscurve,
+    individual_result,
+    created_at,
+    updated_at,
+    creator_employee_no,
+    updator_employee_no
+from "elastomer_dwh"."elastomer"."tensiletest"
+where
+    (tensile_no is not null and tensile_no != '')
+    and (curing_no is not null and curing_no != '')

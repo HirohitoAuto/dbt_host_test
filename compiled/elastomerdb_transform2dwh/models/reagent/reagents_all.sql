@@ -131,9 +131,31 @@ with
             reagent_id,
             reagent
         from "elastomer_dwh"."elastomer"."stg_reagent__m_processaid"
+
+        union all
+
+        select
+            reagent_category_id,
+            reagent_category,
+            reagent_sub_category_id,
+            reagent_sub_category,
+            reagent_id,
+            reagent
+        from "elastomer_dwh"."elastomer"."stg_reagent__m_nbr"
+
+        union all
+
+        select
+            reagent_category_id,
+            reagent_category,
+            reagent_sub_category_id,
+            reagent_sub_category,
+            reagent_id,
+            reagent
+        from "elastomer_dwh"."elastomer"."stg_reagent__m_acm"
     )
 
-select
+select distinct
     reagent_category_id,
     reagent_category,
     reagent_sub_category_id,
